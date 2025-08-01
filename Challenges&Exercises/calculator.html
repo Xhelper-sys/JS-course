@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Exercise-challenge-5
+    </title>
+  </head>
+  <body>
+    <!--
+    Challenge Exercises
+    We'll build a calculator (don't worry, we'll do it step by step).
+    1. Go to 'supersimple.dev/projects/calculator' in your browser.
+    2. Open the Console and click the calculator buttons to see how it wirks.
+
+    Setup: create a new file calculator.html for this project.
+    -->
+
+    <!-- 5m. -->
+
+    <p>
+      Calculator
+    </p>
+
+    <p>
+      <button onclick="
+        calculation += '1';
+      ">
+        1
+      </button>
+
+      <button onclick="
+        calculation += '2';
+      ">
+        2
+      </button>
+
+      <button onclick="
+        calculation += '3'
+      ">
+        3
+      </button>
+
+      <button onclick="
+      calculation += ' + '
+      ">
+        +
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation += '4';
+      ">
+        4
+      </button>
+
+      <button onclick="
+        calculation += '5';
+      ">
+        5
+      </button>
+
+      <button onclick="
+        calculation += '6'
+      ">
+        6
+      </button>
+
+      <button onclick="
+      calculation += ' - '
+      ">
+        -
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation += '7';
+      ">
+        7
+      </button>
+
+      <button onclick="
+        calculation += '8';
+      ">
+        8
+      </button>
+
+      <button onclick="
+        calculation += '9'
+      ">
+        9
+      </button>
+
+      <button onclick="
+      calculation += ' * '
+      ">
+        *
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation += '4';
+      ">
+        0
+      </button>
+
+      <button onclick="
+        calculation += '.';
+      ">
+        .
+      </button>
+
+      <button onclick="
+        calculation = eval(calculation);
+        console.log(calculation);
+      ">
+        =
+      </button>
+
+      <button onclick="
+      calculation += ' / '
+      ">
+        /
+      </button>
+    </p>
+
+    <button onclick="
+      console.log('Cleared.');
+      calculation = '';
+    ">
+      Clear
+    </button>
+
+    
+
+    <script>
+      // 5n.
+      let calculation='';
+    </script>
+  </body>
+</html>
