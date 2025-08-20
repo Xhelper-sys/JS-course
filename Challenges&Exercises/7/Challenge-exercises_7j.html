@@ -125,7 +125,7 @@
 
     <script>
 
-      let calculation='';
+      let calculation = localStorage.getItem('calculation') || '';
 
       function calculOperation(type=undefined) {
 
@@ -162,7 +162,9 @@
       function clear() {
         console.log('Cleared.');
         calculation = '';
-      }
+      };
+
+      localStorage.setItem('calculation', calculation);
     </script>
   </body>
 </html>
