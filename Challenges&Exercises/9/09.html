@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Exercise 9
+    </title>
+  </head>
+  <body>
+    <div style="display:block; margin-bottom: 20px;">
+      <button>
+        9a
+      </button>
+
+      <button class="js-button-9b">
+        9b
+      </button>
+    </div>
+
+    <div style="display:block; margin-bottom: 20px;">
+      <button class="js-button-heads" onclick="
+          choseElement('heads');
+        ">
+        heads
+      </button>
+
+      <button class="js-button-tails" onclick="
+        choseElement('tails');
+      ">
+        tails
+      </button>
+
+      <p class="js-chose"></p>
+    </div>
+
+    <div>
+      <input class="js-name-input" type="text" placeholder="Name" onkeydown="
+          // 9e.
+          displayNameEnter(event)
+        ">
+
+      <button class="js-button-submit" onclick="
+        displayName()
+      ">
+        Submit
+      </button>
+
+      <p class="js-name-text"></p>
+    </div>
+
+    <script>
+      // 9a.
+      const buttonElement = document.querySelector('button');
+      console.log(buttonElement);
+
+      // 9b.
+      document.querySelector('.js-button-9b').innerText = '9b done!';
+
+      // 9c.
+      function choseElement(text) {
+        document.querySelector('.js-chose').innerHTML = `You chose: ${text}`;
+      };
+
+      // 9d.
+      function displayName() {
+        const inputElement = document.querySelector('.js-name-input');
+        const name = inputElement.value;
+        document.querySelector('.js-name-text').innerHTML = `Your name is ${name}`;
+      };
+
+      // 9e.
+      // 9f.
+
+      function displayNameEnter(event) {
+        if (event.key === 'Enter') {
+          displayName();
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Exercise-challenge-9j
+    </title>
+  </head>
+  <body>
+
+    <p>
+      Calculator
+    </p>
+
+    <p class="js-calculation"></p>
+
+    <p>
+      <button onclick="
+        numberAdding('1');
+      ">
+        1
+      </button>
+
+      <button onclick="
+        numberAdding('2');
+      ">
+        2
+      </button>
+
+      <button onclick="
+        numberAdding('3');
+      ">
+        3
+      </button>
+
+      <button onclick="
+        calculOperation('addition');
+      ">
+        +
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        numberAdding('4');
+      ">
+        4
+      </button>
+
+      <button onclick="
+        numberAdding('5');
+      ">
+        5
+      </button>
+
+      <button onclick="
+        numberAdding('6');
+      ">
+        6
+      </button>
+
+      <button onclick="
+        calculOperation('soustraction')
+      ">
+        -
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        numberAdding('7');
+      ">
+        7
+      </button>
+
+      <button onclick="
+        numberAdding('8');
+      ">
+        8
+      </button>
+
+      <button onclick="
+        numberAdding('9');
+      ">
+        9
+      </button>
+
+      <button onclick="
+        calculOperation('multiplication');
+      ">
+        *
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        numberAdding('0');
+      ">
+        0
+      </button>
+
+      <button onclick="
+        comma();
+      ">
+        .
+      </button>
+
+      <button onclick="
+        answer();
+      ">
+        =
+      </button>
+
+      <button onclick="
+        calculOperation('division');
+      ">
+        /
+      </button>
+    </p>
+
+    <button onclick="
+      clearCalculation();
+    ">
+      Clear
+    </button>
+
+    
+
+    <script>
+
+      let calculation = localStorage.getItem('calculation') || '';
+      let textDisplay = document.querySelector('.js-calculation');
+      if(calculation) {
+        textDisplay.innerHTML = calculation;
+      };
+
+      function calculOperation(type=undefined) {
+
+        if (type === 'addition') {
+          calculation += ' + ';
+        } else if (type === 'soustraction') {
+          calculation += ' - ';
+        } else if (type === 'multiplication') {
+          calculation += ' * ';
+        } else if (type === 'division') {
+          calculation += ' / ';
+        };
+        localStorage.setItem('calculation', calculation);
+        textDisplay.innerHTML = calculation
+      };
+
+      function numberAdding(number) {
+        calculation += number;
+        localStorage.setItem('calculation', calculation);
+        textDisplay.innerHTML = calculation;
+        return calculation;
+      };
+
+      function comma() {
+        calculation += '.';
+        localStorage.setItem('calculation', calculation);
+        textDisplay.innerHTML = calculation;
+        return calculation;
+      };
+
+      function answer(){
+        calculation = eval(calculation);
+        localStorage.setItem('calculation', calculation);
+        textDisplay.innerHTML += ` = ${calculation}`;
+        console.log(calculation);
+      };
+
+      function clearCalculation() {
+        console.log('Cleared.');
+        calculation = '';
+        localStorage.setItem('calculation', calculation);
+        textDisplay.innerHTML = '';
+      };
+
+    </script>
+  </body>
+</html>
